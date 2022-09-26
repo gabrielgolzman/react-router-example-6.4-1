@@ -1,14 +1,15 @@
-import { Fragment } from 'react';
+import { Outlet } from "react-router-dom";
+import classes from "./Layout.module.css";
+import MainNavigation from "./MainNavigation";
 
-import classes from './Layout.module.css';
-import MainNavigation from './MainNavigation';
-
-const Layout = (props) => {
+const Layout = ({ children }) => {
   return (
-    <Fragment>
+    <>
       <MainNavigation />
-      <main className={classes.main}>{props.children}</main>
-    </Fragment>
+      <main className={classes.main}>
+        <Outlet />
+      </main>
+    </>
   );
 };
 
